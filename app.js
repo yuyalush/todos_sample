@@ -185,7 +185,7 @@ class TodoApp {
         }
         e.preventDefault();
 
-        const draggedIndex = parseInt(e.dataTransfer.getData('draggedIndex'));
+        const draggedIndex = parseInt(e.dataTransfer.getData('draggedIndex'), 10);
         
         if (draggedIndex !== dropIndex) {
             const draggedItem = this.todos[draggedIndex];
