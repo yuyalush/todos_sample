@@ -157,7 +157,7 @@ class TodoApp {
         e.dataTransfer.effectAllowed = 'move';
         e.dataTransfer.setData('text/html', e.currentTarget.innerHTML);
         e.currentTarget.classList.add('dragging');
-        e.dataTransfer.setData('draggedId', id);
+        e.dataTransfer.setData('draggedIndex', id);
     }
 
     // ドラッグ終了
