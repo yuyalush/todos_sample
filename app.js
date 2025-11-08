@@ -142,12 +142,12 @@ class TodoApp {
     }
 
     // ドラッグ開始
-    handleDragStart(e, index) {
+    handleDragStart(e, id) {
         this.draggedElement = e.currentTarget;
         e.dataTransfer.effectAllowed = 'move';
         e.dataTransfer.setData('text/html', e.currentTarget.innerHTML);
         e.currentTarget.classList.add('dragging');
-        e.dataTransfer.setData('draggedIndex', index);
+        e.dataTransfer.setData('draggedId', id);
     }
 
     // ドラッグ終了
