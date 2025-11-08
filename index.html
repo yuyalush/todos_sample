@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoリスト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header" id="addTodoHeader">
+            <h1>ToDoリスト</h1>
+            <div class="add-todo-hint">+ クリックしてToDoを追加</div>
+        </header>
+        
+        <div class="add-todo-form" id="addTodoForm" style="display: none;">
+            <input type="text" id="todoInput" placeholder="新しいToDoを入力...">
+            <div class="form-buttons">
+                <button id="addBtn" class="btn btn-primary">追加</button>
+                <button id="cancelBtn" class="btn btn-secondary">キャンセル</button>
+            </div>
+        </div>
+
+        <div class="edit-todo-form" id="editTodoForm" style="display: none;">
+            <label for="editInput" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">ToDoを編集</label>
+            <input type="text" id="editInput" placeholder="ToDoを編集...">
+            <div class="form-buttons">
+                <button id="saveBtn" class="btn btn-primary">保存</button>
+                <button id="cancelEditBtn" class="btn btn-secondary">キャンセル</button>
+            </div>
+        </div>
+
+        <ul class="todo-list" id="todoList">
+            <!-- ToDoアイテムがここに表示されます -->
+        </ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
