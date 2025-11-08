@@ -53,13 +53,23 @@ class TodoApp {
 
     // LocalStorageからToDoを読み込む
     loadTodos() {
-        const stored = localStorage.getItem('todos');
-        return stored ? JSON.parse(stored) : [];
+        try {
+            const stored = localStorage.getItem('todos');
+            return stored ? JSON.parse(stored) : [];
+        } catch (e) {
+            // localStorageが使えない場合は空配列を返す
+            return [];
+        }
     }
 
     // LocalStorageにToDoを保存
     saveTodos() {
-        localStorage.setItem('todos', JSON.stringify(this.todos));
+        try {
+            localStorage.setItem('todos', JSON.stringify(this.todos));
+        } catch (e) {
+            // 保存に失敗した場合はエラーを通知（必要に応じて）
+            // alert('ToDoの保存に失敗しました。ストレージの空き容量を確認してください。');
+        }
     }
 
     // 追加フォームを表示
