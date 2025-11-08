@@ -256,15 +256,25 @@ class TodoApp {
             // 編集ボタン
             const editBtn = document.createElement('button');
             editBtn.className = 'action-btn edit-btn';
-            editBtn.innerHTML = '✏️';
+            editBtn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M14.85 2.85a1.2 1.2 0 0 1 1.7 1.7l-9.2 9.2-2.1.4.4-2.1 9.2-9.2zM3 17h14v2H3v-2z" fill="currentColor"/>
+                </svg>
+            `;
             editBtn.title = '編集';
+            editBtn.setAttribute('aria-label', '編集');
             editBtn.addEventListener('click', () => this.showEditForm(todo.id));
 
             // 削除ボタン
             const deleteBtn = document.createElement('button');
             deleteBtn.className = 'action-btn delete-btn';
-            deleteBtn.innerHTML = '🗑️';
+            deleteBtn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M6 7v7h2V7H6zm3 0v7h2V7H9zm3 0v7h2V7h-2zM3 6v2h14V6h-3.5l-1-1h-5l-1 1H3zm2 12c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V8H5v10z" fill="currentColor"/>
+                </svg>
+            `;
             deleteBtn.title = '削除';
+            deleteBtn.setAttribute('aria-label', '削除');
             deleteBtn.addEventListener('click', () => this.deleteTodo(todo.id));
 
             actions.appendChild(editBtn);
